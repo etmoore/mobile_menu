@@ -10,6 +10,11 @@ $("#menu a").each(function(){
   //create an option
   var $option = $("<option></option>");
 
+  //Deal with selected options depending on current page
+  if($anchor.parent().hasClass("selected")) {
+    $option.prop("selected", true);
+  }
+
   //option's value is the href
   $option.val($anchor.attr("href"));
   //option's text is the text of links
@@ -27,4 +32,3 @@ $button.click(function() {
   window.location = $select.val();
 });
 
-//Deal with selected options depending on current page
